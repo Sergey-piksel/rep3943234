@@ -1,1 +1,101 @@
-/* основной файл стилей */
+/*
+@font-face {
+    font-family: 'Raleway';
+    src: url('../fonts/.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+*/
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    align-items: center;
+}
+
+nav{
+    flex-basis: 20%;
+}
+
+main{
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+html {
+  font-size: 16px;
+}
+h1 {
+  font-size: 4.6rem;
+  margin-bottom: 26px;
+}
+h2 {
+  font-size: 1.2rem;
+}
+h3 {
+  font-size: 1.05rem;
+}
+p {
+  line-height: 36px;
+  color: #1e2022;
+  margin: 16px 0px;
+}
+
+.logo{
+    width: 50%;
+}
+
+.header-right{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.horiz-menu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style-type: none;
+}
+
+.first-screen{
+    display: flex;
+    justify-content: space-between;
+}
+
+.description{
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 35%;
+}
+
+.horiz-slider{
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    width: 50%;
+}
+
+.first-screen{
+    height: calc(100vh - 75px);
+    position: relative;
+    bottom: 0;
+    right: 0px;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
