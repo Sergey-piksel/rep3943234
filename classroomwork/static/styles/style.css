@@ -47,11 +47,56 @@ p {
   color: #1e2022;
   margin: 16px 0px;
 }
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.bt-round {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+  opacity: 0.8;
+  transition: all 0.15s ease;
+}
+.bt-round:hover {
+  opacity: 1;
+}
+.button-main {
+  padding: 20px 16px;
+  border-radius: 6px;
+  background-color: #603232;
+  text-align: left;
+}
+.cent-desc button {
+  opacity: 0.75;
+}
+.button-main:hover {
+  opacity: 1;
+}
+.next {
+  min-width: 200px;
+}
 body {
   margin: 0;
   width: 100vw;
+  min-height: 100vh;
   overflow-x: hidden;
   background-color: #dadada;
+  background-position: center;
+  background-size: cover;
+}
+.africa {
+  background-image: url(../images/africa.jpg);
+}
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 header {
   width: 100%;
@@ -67,6 +112,7 @@ header {
 main {
   width: 1200px;
   height: calc(100vh - 100px);
+  position: relative;
   padding-top: 100px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -74,6 +120,9 @@ main {
 }
 .description {
   width: 500px;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .description p {
   color: #FFFFFF;
@@ -85,12 +134,59 @@ main {
   height: 100%;
   padding: 20px 0px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 .cards {
+  height: 100%;
   position: absolute;
   left: 0;
   top: 0;
   display: flex;
+  align-items: center;
+}
+.cards .card {
+  height: 80%;
+  width: 360px;
+  margin-right: 36px;
+  overflow: hidden;
+}
+.cards .card .card-desc {
+  height: 15%;
+  margin-bottom: 3%;
+}
+.cards .card .card-image {
+  width: 100%;
+  height: 82%;
+  position: relative;
+  border-radius: 8px;
+}
+.cards .card .card-image img {
+  height: 150%;
+  position: absolute;
+  left: -50%;
+}
+.cards .card .card-image button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px;
+}
+.cards .card .rating {
+  display: flex;
+}
+.cards .card .rating .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  margin-right: 10px;
+}
+.cards .card .rating .off {
+  opacity: 0.4;
+}
+.cards .card:not(:nth-child(1)) {
+  height: 65%;
 }
 .controls {
   position: absolute;
@@ -98,6 +194,14 @@ main {
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+.controls .arrows button {
+  width: 70px;
+  height: 70px;
+  opacity: 0.4;
+}
+.controls .left-arrow {
+  margin-right: 20px;
 }
 ul {
   list-style-type: none;
@@ -121,4 +225,29 @@ ul {
 .horiz-menu a:visited {
   color: #603232;
   cursor: pointer;
+}
+.slide-nums {
+  display: flex;
+  align-items: center;
+}
+.slide-nums .line {
+  width: 120px;
+  height: 2px;
+  background-color: #FFFFFF;
+  margin: 0 12px;
+}
+.side,
+.trips {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.trips {
+  margin-left: 60px;
+}
+.trips p {
+  margin-right: 20px;
+}
+.hide {
+  display: none;
 }
