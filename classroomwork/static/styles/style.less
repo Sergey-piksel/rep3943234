@@ -50,11 +50,62 @@ p {
     margin: 16px 0px;
 }
 
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.bt-round{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: @light;
+    opacity: 0.8;
+    transition: all 0.15s ease;
+}
+
+.bt-round:hover{
+    opacity: 1;
+}
+
+.button-main {
+    padding: 20px 16px;
+    border-radius: 6px;
+    background-color: @primary;
+    text-align: left;
+}
+.cent-desc button{
+    opacity: 0.75;
+}
+.button-main:hover{
+    opacity: 1;
+}
+
+.next{
+    min-width: 200px;
+}
+
+
 body {
     margin: 0;
     width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
     background-color: #dadada;
+    background-position: center;
+    background-size: cover;
+}
+.africa{
+    background-image: url(../images/africa.jpg);
+}
+
+.layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.4);
 }
 
 // стили для шапки
@@ -76,18 +127,22 @@ header{
 main {
     width: 1200px;
     height: calc(100vh - 100px);
+    position: relative;
     padding-top: 100px;
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
 }
 
-.description {  
+.description {
     width: 500px;
+    height: 100%;
+    display: flex;
+    align-items: center;
     p {
-        color: @light;
+      color: @light;
     }
-}
+  }
 
 .gallery {
     width: 700px;
@@ -96,13 +151,61 @@ main {
     height: 100%;
     padding: 20px 0px;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
 }
 
 .cards {
+    height: 100%;
     position: absolute;
     left: 0;
     top: 0;
     display: flex;
+    align-items: center;
+    .card {
+        height: 80%;
+        width: 360px;
+        margin-right: 36px;
+        overflow: hidden;
+        .card-desc{
+            height: 15%;
+            margin-bottom: 3%;
+        }
+        .card-image{
+            width: 100%;
+            height: 82%;
+            position: relative;
+            border-radius: 8px;
+            img{
+                height: 150%;
+                position: absolute;
+                left: -50%;
+            }
+            button{
+                position: absolute;
+                right: 0;
+                top: 0;
+                margin: 20px;
+            }
+        }
+        .rating{
+            display: flex;
+            .circle{
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                background-color: @light;
+                margin-right: 10px;
+            }
+            .off{
+                opacity: 0.4;
+            }
+        }
+
+    }
+    .card:not(:nth-child(1)){
+        height: 65%;
+    }
 }
 
 .controls {
@@ -111,6 +214,14 @@ main {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    .arrows button{
+        width: 70px;
+        height: 70px;
+        opacity: 0.4;
+    }
+    .left-arrow{
+        margin-right: 20px;
+    }
 }
 
 // стили для списков
@@ -137,4 +248,32 @@ ul{
         color: @primary;
         cursor: pointer;
     }
+}
+
+.slide-nums{
+    display: flex;
+    align-items: center;
+    .line{
+        width: 120px;
+        height: 2px;
+        background-color: @light;
+        margin: 0 12px;
+    }
+}
+
+.side, .trips{
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.trips{
+    margin-left: 60px;
+    p{
+        margin-right: 20px;
+    }
+}
+
+.hide {
+    display: none;
 }
